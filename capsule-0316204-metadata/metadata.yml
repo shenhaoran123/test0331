@@ -1,0 +1,28 @@
+metadata_version: 1
+name: 'ApproxDup: Developing an Approximate Instruction Duplication Mechanism for
+  Efficient SDC Detection in GPGPUs'
+description: 'The artifact of an under review journal article "ApproxDup: Developing
+  an Approximate Instruction Duplication Mechanism for Efficient SDC Detection in
+  GPGPUs". Manuscript ID IS "TCAD-2023-0027.R2".'
+authors:
+- name: Xiaohui Wei
+  affiliations:
+  - name: Jilin University
+- name: Nan Jiang
+  affiliations:
+  - name: jilin  university
+- name: Hengshan Yue
+  affiliations:
+  - name: Jilin University
+- name: Xiaonan Wang
+  affiliations:
+  - name: Jilin University
+- name: Jianpeng Zhao
+  affiliations:
+  - name: Jilin University
+- name: Guangli Li
+  affiliations:
+  - name: Chinese Academy of Sciences
+- name: Meikang Qiu
+  affiliations:
+  - name: North Dakota State University

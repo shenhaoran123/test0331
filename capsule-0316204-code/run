@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -ex
+
+# This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
+
+# Explaination of files in "results" folder
+#     output: the system-generated execution log
+# Output of Step 1:
+#     out.txt: the golden output
+#     2mm.ptx: the instruction list
+#     thread_group.txt: representative thread
+# Output of Step 2:
+#     basic.txt: fault injection information (detail information (i.e., the features proposed in Section  III) of individual fault injection experiment)
+#     outcome.txt: fault injection result (Masked, SDC, or Detected)
+# Output of Step 3:
+#     2mm.1.kernel0.png and 2mm.1.kernel1.png: the dependency graph
+#     test_data.txt and test_label.txt: label predicted
+# Output of Step 4:
+#     2mm_original.ptx and 2mm_original.sass: the PTX and SASS file before duplication
+#     2mm_dup.ptx and 2mm_dup.sass: the PTX and SASS file after duplication
+
+# Step 1: Program progile
+cd CUDA/ProgramProfiling/golden
+chmod u+x golden_output.sh
+./golden_output.sh
+# cp ./2mm.ptx ./out.txt ./thread_group.txt ../../../../results
+
+# Step 2: Fault injection
+# As fault injection takes a long time, in this script, we only perform 100 fault injections for verifying its functionality.
+cd ../../FaultInjection
+chmod u+x inject_one.sh
+./inject_one.sh
+cp ./basic.txt ./outcome.txt ../../../results
+
+# Step 3: Machine learning
+cd ../ProgramProfiling/ptxGraph/dot
+chmod u+x draw.sh
+./draw.sh
+
+cd ../../../MachineLearning/ML
+chmod u+x ml.sh
+cp ./test_data.txt ./test_label.txt ../../../../results
+
+# Step 4. Instruction duplication
+cd ../../InstructionDuplication
+chmod u+x duplication.sh
+./duplication.sh
+
+
+
+

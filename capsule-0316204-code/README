@@ -1,0 +1,82 @@
+
+Setup:
+    The detail of the runtime environment of ApproxDup please refer to “Dockerfile” in the "environment" folder. 
+
+	In the program profiling step, we use an open-source simulator GPGPU-Sim (v4.2.9) [1] to collect thread execution behavior. 
+
+Usage:
+	Below, we provide a detailed description of the implementation of ApproxDup, including the following five steps: 1. program profiling, 2. fault injection, 3. machine learning model for duplicating instructions selection, 4. instruction duplication, and 5. error coverage evaluation.
+
+	1. Program Profiling
+		The purpose of program profiling is to obtain (a) the program's golden output to judge whether soft errors will incur SDCs of GPGPU programs, (b) the instruction list for fault injection, and (c) the representative threads for fault injection overhead reduction. 
+			(a) Program's golden output and (b) Instruction list.
+				Compile and execute the target program.
+			(c) Representative threads.
+				Profile the target program with GPGPU-sim 4.0 and conserve individual threads' dynamic instruction information by modifying GPGPU-sim's “output” option. Consider threads with similar dynamic instructions as a group and select a thread from one thread group for fault injection.
+	2. Fault injection experiment (for training dataset construction)
+		According to the output of program profiling (step 1), we perform fault injection campaigns. Run the script “inject_one.sh” to perform fault injection for user-specified times. The main file for fault injection is “fault-inject.py”, where users can inject faults to representative threads and instructions. The output of fault injection is “outcome.txt” and “basic.txt” which record the fault injection outcomes (i.e., Masked, SDC and Detected) and the detail information (i.e., the features proposed in Section III) of individual fault injection experiment. 
+	3. Machine learning model (for duplicate-candidate instruction selection)
+		The machine learning model construction consists of two steps: feature extraction and model training
+			(a) Feature extraction. 
+				Based on the result of fault injection (step 2), take the following steps:
+				Run “draw.sh” to obtain program's dependency graph.
+				Run “ins_fea.py” to extract features based on the output of Step 1 and finally generate the training data for machine learning model. 
+			(b) Model training.
+				Run “svm.py” for model training and duplicate-candidate instruction identifying.
+	4. Instruction duplication
+		According to the prediction results (test_data.txt and test_label.txt) of the ML model, we obtain the duplicate-candidate instructions (predicted label is "1"). Utilizing the dependency graph generated in Step 3 (a), we generate the duplication chains of the program. Users can run “duplication.sh” to obtain the PTX and SASS file before and after duplication.
+
+		We compile the CUDA source file to PTX utilizing the NVIDIA front-end compiler, modify the PTX file by inserting error detection (i.e., duplication, error verification, and error notification) instructions, then continue the compilation process with the modified PTX file using the back-end compiler. By adjusting compile optimization options, we ensure that the modified-PTX generated SASS file preserves the inserted instruction duplication and error detection instructions. 
+		
+	5.  Error coverage evaluation
+		For the duplicated program, we further evaluate the error detection capability. In line with previous studies [2, 3], we perform fault injection experiments on the duplicated PTX file using the method in Step 2, and estimate the error coverage based on the statistical results.
+
+Example:
+	An example is listed here as a guidance. Users can execute and read the "run" file to verify the functionality of ApproxDup. The output of each Step are conserved in the "results" folder.
+	Partial operations mentioned above are integrated into *.sh file for convenience (e.g., run "ins_fea.py" and "svm.py").
+
+	Step 1: Program profile
+		cd CUDA/ProgramProfiling/golden
+		chmod u+x golden_output.sh
+		./golden_output.sh
+
+		output:
+		out.txt: the golden output
+		2mm.ptx: the instruction list
+		thread_group.txt: representative thread
+
+	Step 2: Fault injection
+		cd ../../FaultInjection
+		chmod u+x inject_one.sh
+		./inject_one.sh
+
+		output: 
+		basic.txt: fault injection information (detail information (i.e., the features proposed in Section  III) of individual fault injection experiment)
+		outcome.txt: fault injection result (Masked, SDC, or Detected)
+
+	Step 3: Machine learning
+		cd ../ProgramProfiling/ptxGraph/dot
+		chmod u+x draw.sh
+		./draw.sh
+		cd ../../../MachineLearning/ML
+		chmod u+x ml.sh
+
+		output:
+		2mm.1.kernel0.png and 2mm.1.kernel1.png: the dependency graph of each kernel
+		test_data.txt and test_label.txt: label predicted
+
+	Step 4. Instruction duplication
+		cd ../../InstructionDuplication
+		chmod u+x duplication.sh
+		./duplication.sh
+
+		output: 
+		2mm_original.ptx and 2mm_original.sass: the PTX and SASS file before duplication
+		2mm_dup.ptx and 2mm_dup.sass: the PTX and SASS file after duplication
+
+Citation:
+	[1] A. Bakhoda, G. L. Yuan, W. W. L. Fung, H. Wong, and T. M. Aamodt. Analyzing cuda workloads using a detailed gpu simulator. In 2009 IEEE International Symposium on Performance Analysis of Systems and Software, pages 163-174, 2009.
+	[2] Yafan Huang, Shengjian Guo, Sheng Di, Guanpeng Li, and Franck Cappello. Mitigating silent data corruptions in hpc applications across multiple program inputs. In 2022 SC22: International Conference for High Performance Computing, Networking, Storage and Analysis (SC), pages 219–232. IEEE Computer Society, 2022.
+	[3] Charu Kalra, Fritz Previlon, Norm Rubin, and David Kaeli. Armorall: Compiler-based resilience targeting gpu applications. ACM Trans. Archit. Code Optim., 17(2), May 2020.
+
+	
