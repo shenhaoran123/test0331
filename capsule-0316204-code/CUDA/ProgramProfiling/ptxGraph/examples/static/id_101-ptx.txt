@@ -1,0 +1,15 @@
+32 ld.param.u64 %rd6, [_Z14invert_mappingPfS_ii_param_0];
+33 ld.param.u64 %rd7, [_Z14invert_mappingPfS_ii_param_1];
+34 ld.param.u32 %r18, [_Z14invert_mappingPfS_ii_param_2];
+35 ld.param.u32 %r19, [_Z14invert_mappingPfS_ii_param_3];
+36 cvta.to.global.u64 %rd1, %rd7;
+37 cvta.to.global.u64 %rd2, %rd6;
+38 mov.u32 %r1, %ctaid.x;
+39 mov.u32 %r2, %ntid.x;
+40 mov.u32 %r3, %tid.x;
+41 mad.lo.s32 %r4, %r1, %r2, %r3;
+42 setp.lt.s32%p1, %r4, %r18;
+43 setp.gt.s32%p2, %r19, 0;
+44 and.pred %p3, %p1, %p2;
+45 @!%p3 bra BB0_10;
+125 ret;
