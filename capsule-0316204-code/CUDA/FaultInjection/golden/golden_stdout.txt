@@ -1,0 +1,4 @@
+setting device 0 with name NVIDIA GeForce RTX 3090
+GPU Runtime: 0.000812s
+CPU Runtime: 0.610115s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
