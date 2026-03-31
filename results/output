@@ -1,0 +1,1516 @@
++ cd CUDA/ProgramProfiling/golden
++ chmod u+x golden_output.sh
++ ./golden_output.sh
+nvcc -arch=sm_35 -Xptxas -O0 -o 2mm 2mm.cu
+nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+nvcc -arch=sm_35 -Xptxas -O0 -keep -o 2mm 2mm.cu
+nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+setting device 0 with name Tesla T4
+GPU Runtime: 0.004271s
+CPU Runtime: 1.740792s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
++ cd ../../FaultInjection
++ chmod u+x inject_one.sh
++ ./inject_one.sh
+nvcc -arch=sm_35 -Xptxas -O0 -o 2mm 2mm.cu
+nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+=====Golden output file have existed=====
+===== Create golden_stdout.txt and golden_stderr.txt =====
+===== golden_stdout.txt and golden_stderr.txt move to golden =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.004735s
+CPU Runtime: 1.794622s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Run application correctly =====
+===== out.txt Move to golden =====
+rm -f *~ *.ptx *.ii *.i *.c *.cpp *.gpu *.fatbin *.hash *.o *.cubin *.module_id *.out
+rm -rf 2mm result
+rm -f *.txt *.log
+nvcc -arch=sm_35 -Xptxas -O0 -keep -o 2mm 2mm.cu
+nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+nvcc -dryrun -arch=sm_35 -O0 -o 2mm 2mm.cu --keep 2>dryrun.out
+Create dryrun1.out
+Backup ptx file
+Create temp.txt
+delete_line back_ptx read_ptx===== result created ====
+**********************************************THE 1 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================19 in 64 times==============
+===== Increase executable of dryrun1.out =====
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002321s
+CPU Runtime: 1.841390s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 1
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 2 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================27 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002417s
+CPU Runtime: 1.801447s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 2
+0 stderr_file
+======================Masked==============================
+**********************************************THE 3 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.153582s
+CPU Runtime: 1.815356s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 3
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 4 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================53 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002411s
+CPU Runtime: 1.731824s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 4
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 5 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================57 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001787s
+CPU Runtime: 1.783022s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 5
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 6 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001926s
+CPU Runtime: 1.744593s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 6
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 7 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.049299s
+CPU Runtime: 1.781158s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 7
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 8 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================35 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002403s
+CPU Runtime: 1.714738s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 8
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 9 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================55 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.062341s
+CPU Runtime: 1.709710s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 9
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 10 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================34 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001955s
+CPU Runtime: 1.870175s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 10
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 11 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002240s
+CPU Runtime: 1.807330s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 11
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 12 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================29 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002322s
+CPU Runtime: 1.862508s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 12
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 13 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================22 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001962s
+CPU Runtime: 1.759279s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 13
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 14 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002528s
+CPU Runtime: 1.800919s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 14
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 15 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================40 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001952s
+CPU Runtime: 1.805862s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 15
+0 stderr_file
+======================Masked==============================
+**********************************************THE 16 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002402s
+CPU Runtime: 1.758763s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 1024
+===== Create diff.log =====
+para: 0
+itera_time: 16
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 17 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002138s
+CPU Runtime: 1.766410s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 17
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 18 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================16 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001866s
+CPU Runtime: 1.840916s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 18
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 19 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.055539s
+CPU Runtime: 1.933223s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 19
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 20 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================55 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002478s
+CPU Runtime: 1.760997s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 20
+0 stderr_file
+======================Masked==============================
+**********************************************THE 21 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002464s
+CPU Runtime: 1.756572s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 21
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 22 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================2 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002481s
+CPU Runtime: 1.723024s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 22
+0 stderr_file
+======================Masked==============================
+**********************************************THE 23 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================34 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002404s
+CPU Runtime: 1.804264s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 23
+0 stderr_file
+======================Masked==============================
+**********************************************THE 24 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================48 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001870s
+CPU Runtime: 1.788286s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 24
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 25 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.060753s
+CPU Runtime: 1.830565s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 25
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 26 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================10 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002480s
+CPU Runtime: 1.776114s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 26
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 27 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.076643s
+CPU Runtime: 1.859379s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 27
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 28 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002398s
+CPU Runtime: 1.796216s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 28
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 29 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================46 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002482s
+CPU Runtime: 1.859376s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 29
+0 stderr_file
+======================Masked==============================
+**********************************************THE 30 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================57 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002417s
+CPU Runtime: 1.819942s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 30
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 31 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================58 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002480s
+CPU Runtime: 1.746842s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 31
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 32 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================28 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001955s
+CPU Runtime: 1.765676s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 32
+0 stderr_file
+======================Masked==============================
+**********************************************THE 33 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================34 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002367s
+CPU Runtime: 1.827318s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 33
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 34 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002302s
+CPU Runtime: 1.789605s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 34
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 35 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.173968s
+CPU Runtime: 1.787399s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 35
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 36 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================28 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.064672s
+CPU Runtime: 1.757198s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 36
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 37 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================34 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002115s
+CPU Runtime: 1.802998s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 37
+0 stderr_file
+======================Masked==============================
+**********************************************THE 38 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001953s
+CPU Runtime: 1.744158s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 38
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 39 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================34 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002403s
+CPU Runtime: 1.736762s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 39
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 40 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================13 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002248s
+CPU Runtime: 1.793069s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 40
+0 stderr_file
+======================Masked==============================
+**********************************************THE 41 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002398s
+CPU Runtime: 1.823812s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 41
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 42 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================41 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001843s
+CPU Runtime: 1.829318s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 42
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 43 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001950s
+CPU Runtime: 1.764341s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 43
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 44 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002359s
+CPU Runtime: 1.820978s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 44
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 45 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================24 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002306s
+CPU Runtime: 1.709767s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 45
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 46 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================25 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002509s
+CPU Runtime: 1.846529s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 46
+0 stderr_file
+======================Masked==============================
+**********************************************THE 47 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================58 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002522s
+CPU Runtime: 1.743433s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 47
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 48 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002358s
+CPU Runtime: 1.787886s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 48
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 49 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================49 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002002s
+CPU Runtime: 1.761926s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 49
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 50 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002030s
+CPU Runtime: 1.851623s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 50
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 51 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================36 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002148s
+CPU Runtime: 1.812187s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 51
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 52 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002498s
+CPU Runtime: 1.797175s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 52
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 53 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.056048s
+CPU Runtime: 1.749584s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 53
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 54 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================61 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002009s
+CPU Runtime: 1.837767s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 54
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 55 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================32 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002515s
+CPU Runtime: 1.724133s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 55
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 56 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================56 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002475s
+CPU Runtime: 1.804323s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 56
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 57 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002510s
+CPU Runtime: 1.879977s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 57
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 58 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================59 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002026s
+CPU Runtime: 1.784960s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 58
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 59 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================58 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002517s
+CPU Runtime: 1.848480s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 59
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 60 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================9 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002308s
+CPU Runtime: 1.803527s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 60
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 61 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.146918s
+CPU Runtime: 1.829924s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 61
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 62 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================17 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002092s
+CPU Runtime: 1.794841s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 62
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 63 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002499s
+CPU Runtime: 1.814020s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 63
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 64 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================53 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002046s
+CPU Runtime: 1.701051s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 64
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 65 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002405s
+CPU Runtime: 1.753689s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 65
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 66 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================33 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002477s
+CPU Runtime: 1.757912s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 66
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 67 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001957s
+CPU Runtime: 1.769795s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 67
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 68 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002023s
+CPU Runtime: 1.797442s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 68
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 69 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================6 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002080s
+CPU Runtime: 1.793424s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 69
+0 stderr_file
+======================Masked==============================
+**********************************************THE 70 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================8 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002513s
+CPU Runtime: 1.767104s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 70
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 71 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================36 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002513s
+CPU Runtime: 1.804414s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 71
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 72 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================57 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002062s
+CPU Runtime: 1.788635s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 72
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 73 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================49 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002075s
+CPU Runtime: 1.805350s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 73
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 74 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================27 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002083s
+CPU Runtime: 1.745364s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 74
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 75 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================49 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002416s
+CPU Runtime: 1.864233s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 75
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 76 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================59 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002553s
+CPU Runtime: 1.783156s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 76
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 77 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================27 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002073s
+CPU Runtime: 1.793382s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 77
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 78 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================45 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002417s
+CPU Runtime: 1.741578s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 78
+0 stderr_file
+======================Masked==============================
+**********************************************THE 79 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================57 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002415s
+CPU Runtime: 1.817101s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 79
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 80 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002466s
+CPU Runtime: 1.755793s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 80
+0 stderr_file
+======================Masked==============================
+**********************************************THE 81 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================60 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001958s
+CPU Runtime: 1.770983s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 81
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 82 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================59 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001867s
+CPU Runtime: 1.799866s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 82
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 83 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================4 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002310s
+CPU Runtime: 1.878505s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 83
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 84 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.053580s
+CPU Runtime: 1.782316s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 84
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 85 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.001851s
+CPU Runtime: 1.819368s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 85
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 86 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.176036s
+CPU Runtime: 1.864946s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 86
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 87 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================18 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002310s
+CPU Runtime: 1.736675s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 87
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 88 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.189445s
+CPU Runtime: 1.787273s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 88
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 89 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================5 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.067067s
+CPU Runtime: 1.826530s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 89
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 90 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002403s
+CPU Runtime: 1.793513s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 512
+===== Create diff.log =====
+para: 0
+itera_time: 90
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 91 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================24 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002414s
+CPU Runtime: 1.770611s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 91
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 92 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================49 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002479s
+CPU Runtime: 1.736881s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 92
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 93 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================59 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002314s
+CPU Runtime: 1.699176s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 93
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 94 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================39 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002408s
+CPU Runtime: 1.815844s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 94
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 95 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.053573s
+CPU Runtime: 1.734722s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 95
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 96 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================12 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002347s
+CPU Runtime: 1.816648s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 96
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 97 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.143655s
+CPU Runtime: 1.733699s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 97
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 98 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================63 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.065086s
+CPU Runtime: 1.768723s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 98
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 99 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================20 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.169767s
+CPU Runtime: 1.786998s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 261632
+===== Create diff.log =====
+para: 0
+itera_time: 99
+0 stderr_file
+~~~~~~~~~~~~~~~~~~~~~~~~SDC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************THE 100 INJECTION*****************************************
+[47, 48, 52, 53, 54, 57, 65, 69, 73, 77, 81, 85, 89, 93, 95, 97, 98]
+_Z11mm2_kernel1PfS_S_-----[_Z11mm2_kernel1PfS_S_Pd_param_3]
+====================64 in 64 times==============
+===== Create sdtout.txt and stderr.txt =====
+===== Create out.txt =====
+setting device 0 with name Tesla T4
+GPU Runtime: 0.002352s
+CPU Runtime: 1.822410s
+Non-Matching CPU-GPU Outputs Beyond Error Threshold of 0.05 Percent: 0
+===== Create diff.log =====
+para: 0
+itera_time: 100
+0 stderr_file
+======================Masked==============================
++ cp ./basic.txt ./outcome.txt ../../../results
++ cd ../ProgramProfiling/ptxGraph/dot
++ chmod u+x draw.sh
++ ./draw.sh
+dot -Tpng ./2mm.1.kernel0.dot -o ./2mm.1.kernel0.png
+dot -Tpng ./2mm.1.kernel1.dot -o ./2mm.1.kernel1.png
++ cd ../../../MachineLearning/ML
++ chmod u+x ml.sh
++ cp ./test_data.txt ./test_label.txt ../../../../results
++ cd ../../InstructionDuplication
++ chmod u+x duplication.sh
++ ./duplication.sh
+rm -f *~ 2mm *.ii *.i *.gpu *.fatbin *.hash *.o *.cubin *.module_id *.exe *.c *.cpp
+rm -f 2mm1 2mm_dup 2mm_dup_without_load
+nvcc -arch=sm_35 -Xptxas -O0 -keep -o 2mm 2mm.cu
+nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).

@@ -1,0 +1,11 @@
+
+# obtained from GPGPU-sim
+
+kernel 1:
+    two groups in total: 
+        rep thread of group 1: 1
+        rep threaf of group 2: 65537
+kernel 2:
+    two groups in total: 
+        rep thread of group 1: 1
+        rep threaf of group 2: 65537
